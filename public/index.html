@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invitation Card Generator</title>
+    <style>
+        body { font-family: Arial; max-width: 500px; margin: 50px auto; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; margin: 5px 0; }
+        button { background: #4CAF50; color: white; padding: 15px; border: none; cursor: pointer; width: 100%; margin-top: 20px; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>Generate Invitation Card</h2>
+    <form id="invitationForm">
+        <label>Select Template:</label>
+        <select id="template" required>
+            <option value="">-- Choose Template --</option>
+            <option value="template1.pdf">Template 1</option>
+            <option value="template2.pdf">Template 2</option>
+        </select>
+        
+        <label>Name:</label>
+        <input type="text" id="name" required>
+        
+        <label>Location:</label>
+        <input type="text" id="location" required>
+        
+        <button type="submit">Generate PDF</button>
+    </form>
+
+    <script>
+        document.getElementById('invitationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const template = document.getElementById('template').value;
+            const name = document.getElementById('name').value;
+            const location = document.getElementById('location').value;
+            
+            const response = await fetch('/generate-pdf', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ template, name, location })
+            });
+            
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Invitation_${name}.pdf`;
+            a.click();
+            
+            // Clear form
+            document.getElementById('invitationForm').reset();
+        });
+    </script>
+</body>
+</html>
