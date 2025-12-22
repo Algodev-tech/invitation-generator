@@ -33,20 +33,20 @@ app.post('/generate-pdf', async (req, res) => {
         
         if (template === 'template1.pdf') {
             // Template 1 positions
-            nameX = 1000;
-            nameY = height - 1800;
-            locationX = 1050;
-            locationY = height - 1950;
-            page3NameX = 1000;
-            page3NameY = height - 800;
+            nameX = 950;
+            nameY = height - 1600;
+            locationX = 950;
+            locationY = height - 1750;
+            page3NameX = 900;
+            page3NameY = height - 550;
         } else if (template === 'template2.pdf') {
             // Template 2 positions (adjust these for your second template)
-            nameX = 1000;
-            nameY = height - 1800;
-            locationX = 1050;
-            locationY = height - 1950;
-            page3NameX = 1000;
-            page3NameY = height - 800;
+            nameX = 950;
+            nameY = height - 1600;
+            locationX = 950;
+            locationY = height - 1750;
+            page3NameX = 900;
+            page3NameY = height - 550;
         }
         
         // Add text to page 1 - Name
