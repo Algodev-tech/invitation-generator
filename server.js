@@ -33,7 +33,7 @@ app.post('/generate-pdf', async (req, res) => {
         
         if (template === 'template1.pdf') {
             // Template 1 positions
-            nameX = 950;
+            nameX = 800;
             nameY = height - 1600;
             locationX = 950;
             locationY = height - 1750;
