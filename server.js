@@ -33,7 +33,7 @@ app.post('/generate-pdf', async (req, res) => {
         
         if (template === 'template1.pdf') {
             // Template 1 positions
-            nameX = 650;
+            nameX = 700;
             nameY = height - 1600;
             locationX = 950;
             locationY = height - 1750;
@@ -41,7 +41,7 @@ app.post('/generate-pdf', async (req, res) => {
             page3NameY = height - 550;
         } else if (template === 'template2.pdf') {
             // Template 2 positions (adjust these for your second template)
-            nameX = 650;
+            nameX = 700;
             nameY = height - 1600;
             locationX = 950;
             locationY = height - 1750;
