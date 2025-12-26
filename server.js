@@ -49,7 +49,7 @@ app.post('/generate-pdf', async (req, res) => {
     page1.drawText(name, {
       x: name1X,
       y: name1Y,
-      size: 25,
+      size: 18,
       font,
       color: rgb(0.5, 0, 0),
     });
@@ -58,7 +58,7 @@ app.post('/generate-pdf', async (req, res) => {
     page1.drawText(location, {
       x: locationX,
       y: locationY,
-      size: 25,
+      size: 18,
       font,
       color: rgb(0.5, 0, 0),
     });
@@ -67,7 +67,7 @@ app.post('/generate-pdf', async (req, res) => {
     page3.drawText(name, {
       x: name2X,
       y: name2Y,
-      size: 25,
+      size: 18,
       font,
       color: rgb(0.5, 0, 0),
     });
